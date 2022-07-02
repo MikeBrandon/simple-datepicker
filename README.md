@@ -6,7 +6,7 @@ This was the first ever ambitious svelte component i worked on. I recently just 
 - windicss
 
 ## Usage
-Well I haven't added the package to npm yet and don't really think I plan to in the near future but you could download the `Datepicker.svelte` file and add it to your components folder then just import it as you would other components as shown in the example below.
+Well I haven't added the package to npm yet and don't really think I plan to in the near future but you could download the `src/lib/Datepicker.svelte` file and add it to your components folder then just import it as you would other components as shown in the example below.
 ```html
     <Datepicker 
         selectionType={0}
