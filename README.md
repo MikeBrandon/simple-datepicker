@@ -1,38 +1,84 @@
-# create-svelte
+# Simple Datepicker
+This was the first ever ambitious svelte component i worked on. I recently just moved it to sveltekit and added a few optimizations and improvements but still plan on improving it even more just for fun so welcome to its official repo.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Technologies Used
+- Sveltekit
+- windicss
 
-## Creating a project
+## Usage
+Well I haven't added the package to npm yet and don't really think I plan to in the near future but you could download the `Datepicker.svelte` file and add it to your components folder then just import it as you would other components as shown in the example below.
+```html
+    <Datepicker 
+        selectionType={0}
+        weekDaysType={0}
+        position={'bottom'}
+        dateFormat={"DD/MM/YYYY"}
+        maxDate={new Date('August 17, 2025 03:24:00')}
+        minDate={null}
+        on:confirm={(e) => {
+            console.log(e.detail);
+        }}
+    />
+```
+You can listen to the on:confirm comand to check for what the user has selected and use it to update you're variable. Below are example outputs of the console.log(e.detail) with different selectionTypes.
 
-If you're seeing this, you've probably already done this step. Congrats!
+```javascript
+    {
+        selectedDate: Wed Jul 13 2022 00:00:00 GMT+0300 (East Africa Time)
+    }
+```
+selectionType 1: Single Date DatePicker
 
-```bash
-# create a new project in the current directory
-npm init svelte
+```javascript
+    {
+        selectedDates: [
+            Wed Jul 13 2022 00:00:00 GMT+0300 (East Africa Time),
+            Thur Jul 14 2022 00:00:00 GMT+0300 (East Africa Time)
+        ]
+    }
+```
+selectionType 2: Multiple Date DatePicker
 
-# create a new project in my-app
-npm init svelte my-app
+### Props
+I have provided a couple of props to customize the datepicker. Some of which are still in development.
+```javascript
+    //0 => Single Date
+    //1 => Multiple Dates
+    //2 => Range of Dates (In dev)
+    export let selectionType = 0;
+
+    //0 => Weeks Starting from Sunday
+    //1 => Weeks Starting from Monday
+    export let weekDaysType = 0;
+
+    //"bottom" => Calendar under button
+    //"top" => Calendar above button (In dev)
+    export let position = 'bottom';
+
+    // "YY" => yearShort)
+    // "DDDD" => day)
+    // "DDD" => dayShort)
+    // "DD" => date.toString().padStart(2, '0'))
+    // "D" => date)
+    // "MMMM" => month)
+    // "MMM" => monthShort)
+    // "MM" => monthNumber.toString().padStart(2, '0'))
+    // "M" => monthNumber)
+    export let dateFormat = 'DD/MM/YYYY';
+
+    // Sample Date object => new Date('August 17, 2025 03:24:00')
+    export let maxDate = null;
+    export let minDate = null;
 ```
 
-## Developing
+## Future Plans
+I plan to add a few more features to this project when I get free time and these features include:
+- Range selectionType
+- Click outside calendar to close calendar
+- Custom Colors so users can use their own
+- Top calender position relative to datepicker button
+- Responsiveness fixes
+- Further optimizations
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Features I do not plan to add but maybe in the future when I can code like the movies.
+- Time Picker
