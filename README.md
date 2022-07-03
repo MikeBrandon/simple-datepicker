@@ -74,7 +74,6 @@ I have provided a couple of props to customize the datepicker. Some of which are
 ## Future Plans
 I plan to add a few more features to this project when I get free time and these features include:
 - Range selectionType
-- Click outside calendar to close calendar
 - Custom Colors so users can use their own
 - Top calender position relative to datepicker button
 - Responsiveness fixes
