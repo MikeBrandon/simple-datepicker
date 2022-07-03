@@ -76,9 +76,9 @@ I plan to add a few more features to this project when I get free time and these
 - Range selectionType
 - Custom Colors so users can use their own
 - Top calender position relative to datepicker button
-- Migrate to typescript
 - Responsiveness fixes
 - Further optimizations
 
 Features I do not plan to add but maybe in the future when I can code like the movies.
 - Time Picker
+- Migrate to typescript
