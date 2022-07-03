@@ -6,11 +6,7 @@ This was the first ever ambitious svelte component i worked on. I recently just 
 - windicss
 
 ## Usage
-Well I haven't added the package to npm yet and don't really think I plan to in the near future but you could download the `src/lib/Datepicker.svelte` file and add it to your components folder then just import it as you would other components as shown in the example below. You should also replace the icons in the code with your own icons or you may as well copy the following files and add them to the corresponding folder in your project.
-- Icon.svelte
-- right_arrow.svg
-- left-arrow.svg
-- calendar.svg
+Well I haven't added the package to npm yet and don't really think I plan to in the near future but you could download the `src/lib/Datepicker.svelte` file and add it to your components folder then just import it as you would other components as shown in the example below.
 ```html
     <Datepicker 
         selectionType={0}
@@ -24,8 +20,14 @@ Well I haven't added the package to npm yet and don't really think I plan to in 
         }}
     />
 ```
-You can listen to the on:confirm comand to check for what the user has selected and use it to update you're variable. Below are example outputs of the console.log(e.detail) with different selectionTypes.
 
+You should also replace the icons in the code with your own icons or you may as well copy the following files and add them to the corresponding folder in your project.
+- Icon.svelte
+- right_arrow.svg
+- left-arrow.svg
+- calendar.svg
+
+You can listen to the `on:confirm` event to check for what the user has selected and use it to update you're variable. Below are example outputs of the console.log(e.detail) with different selectionTypes.
 ```javascript
     {
         selectedDate: Wed Jul 13 2022 00:00:00 GMT+0300 (East Africa Time)
