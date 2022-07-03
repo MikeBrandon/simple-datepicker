@@ -6,7 +6,11 @@ This was the first ever ambitious svelte component i worked on. I recently just 
 - windicss
 
 ## Usage
-Well I haven't added the package to npm yet and don't really think I plan to in the near future but you could download the `src/lib/Datepicker.svelte` file and add it to your components folder then just import it as you would other components as shown in the example below.
+Well I haven't added the package to npm yet and don't really think I plan to in the near future but you could download the `src/lib/Datepicker.svelte` file and add it to your components folder then just import it as you would other components as shown in the example below. You should also replace the Arrow Icons in the code with you're own arrows or you may as well copy the following files and add them to your project.
+- Icon.svelte
+- right_arrow.svg
+- left-arrow.svg
+- calendar.svg
 ```html
     <Datepicker 
         selectionType={0}
@@ -76,6 +80,7 @@ I plan to add a few more features to this project when I get free time and these
 - Range selectionType
 - Custom Colors so users can use their own
 - Top calender position relative to datepicker button
+- Move Icons to Datepicker to simplify usage
 - Responsiveness fixes
 - Further optimizations
 
