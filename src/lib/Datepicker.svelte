@@ -2,6 +2,7 @@
     import Icon from "$lib/Icon.svelte";
     import { createEventDispatcher } from "svelte";
     import { scale } from "svelte/transition";
+    import { clickOutside } from './utils.js';
 
     //0 => Single Date
     //1 => Multiple Dates
@@ -365,9 +366,14 @@
         }
         
     }
-
 </script>
-<div class="everything">
+
+<div class="everything" use:clickOutside on:click_outside={() => {
+    if (!datepickSettings.visible) {
+        return;
+    }
+    datepickSettings.visible = false;
+}}>
     <div on:click={() => {
         toggleCalendar()
     }} class="cursor-pointer toggle_cal flex justify-center items-center">
